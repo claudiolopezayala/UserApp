@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../create_profile/create_profile_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -8,7 +9,10 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            //TODO
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CreateProfileScreen()),
+            );
           },
           child: Text('Crear perfil'),
         ),

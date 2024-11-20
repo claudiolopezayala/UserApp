@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../user_profile/user_profile_screen.dart';
 
 class CreateProfileScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
@@ -29,7 +30,16 @@ class CreateProfileScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                //TODO
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => UserProfileScreen(
+                      name: nameController.text,
+                      age: ageController.text,
+                      occupation: occupationController.text,
+                    ),
+                  ),
+                );
               },
               child: Text('Guardar y Ver Perfil'),
             ),
